@@ -107,6 +107,8 @@ application:
             env:
               - name: DEBUG
                 value: "false"
+            portForward:
+            - 39083:9080
           dev:
             gitUrl: https://e.coding.net/codingcorp/nocalhost/bookinfo-ratings.git
             image: codingcorp-docker.pkg.coding.net/nocalhost/dev-images/node:12.18.1-slim
@@ -121,6 +123,8 @@ application:
             env:
             - name: DEBUG
               value: "true"
+            portForward:
+            - 39083:9080
     - name: reviews
       serviceType: deployment
       dependLabelSelector:
@@ -131,6 +135,8 @@ application:
             env:
               - name: DEBUG
                 value: "false"
+            portForward:
+            - 39083:9080
           dev:
             gitUrl: https://e.coding.net/codingcorp/nocalhost/bookinfo-reviews.git
             image: codingcorp-docker.pkg.coding.net/nocalhost/dev-images/java:latest
@@ -145,3 +151,5 @@ application:
             env:
             - name: DEBUG
               value: "true"
+            portForward:
+            - 39083:9080
