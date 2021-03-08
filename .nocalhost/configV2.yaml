@@ -78,6 +78,8 @@ application:
             env:
               - name: DEBUG
                 value: "false"
+            portForward:
+            - 39081:9080
           dev:
             gitUrl: https://e.coding.net/codingcorp/nocalhost/bookinfo-details.git
             image: codingcorp-docker.pkg.coding.net/nocalhost/dev-images/ruby:2.7.1-slim
@@ -105,8 +107,6 @@ application:
             env:
               - name: DEBUG
                 value: "false"
-            portForward:
-            - 39081:9080
           dev:
             gitUrl: https://e.coding.net/codingcorp/nocalhost/bookinfo-ratings.git
             image: codingcorp-docker.pkg.coding.net/nocalhost/dev-images/node:12.18.1-slim
